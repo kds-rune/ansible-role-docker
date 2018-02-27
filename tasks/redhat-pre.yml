@@ -1,0 +1,19 @@
+---
+## Pre-requirements
+- name: pre | enable epel repository
+  yum:
+    name: epel-release
+    state: present
+  become: true
+
+- name: pre | install packages
+  yum:
+    name: "{{ item }}"
+    state: present
+  with_items:
+    - '@Development tools'
+    - screen
+    - python
+    - python-pip
+  become: true
+  notify: update pip

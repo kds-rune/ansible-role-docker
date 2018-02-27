@@ -1,0 +1,6 @@
+---
+# defaults file for role
+docker_repo_url: 'https://download.docker.com/linux/centos/docker-ce.repo'
+docker_repo_key: 'https://download.docker.com/linux/centos/gpg'
+docker_edge_enable: false
+docker_test_enable: false

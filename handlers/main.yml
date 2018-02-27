@@ -1,0 +1,14 @@
+---
+# handlers file for role
+- name: docker installed
+  become: true
+  service:
+    name: docker
+    state: restarted
+    enabled: true
+
+- name: update pip
+  become: true
+  pip:
+    name: pip
+    state: latest

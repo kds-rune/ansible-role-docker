@@ -1,0 +1,11 @@
+---
+# tasks file for role
+- name: include tasks
+  block:
+    - include_tasks: "{{ ansible_os_family | lower }}-pre.yml"
+    - include_tasks: "{{ ansible_os_family | lower }}-docker.yml"
+  failed_when: ^
+    (ansible_os_family is not defined) or
+    (ansible_os_family != 'RedHat')
+  rescue:
+    - debug: msg="{{ ansible_os_family }} is not supported for this role"
