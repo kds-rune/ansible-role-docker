@@ -1,7 +1,4 @@
 ---
-##
-#
-##
 - name: docker | add gpg key
   become: true
   rpm_key:
